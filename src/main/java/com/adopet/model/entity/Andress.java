@@ -25,6 +25,9 @@ public class Andress {
 
     @Column(length = 30)
     private String neigthborhood;
+    
+    @Column(length = 8)
+    private String cep;
 
     @Column(length = 30)
     private String city;
