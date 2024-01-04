@@ -2,11 +2,17 @@ package com.adopet.model.entity;
 
 import java.io.Serializable;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.MappedSuperclass;
 import lombok.Data;
 
 @Data
-public class Pet  implements Serializable{
-
+@MappedSuperclass
+public abstract class Pet implements Serializable {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nome;
     private String especie;
