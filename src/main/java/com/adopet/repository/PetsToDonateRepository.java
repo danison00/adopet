@@ -1,8 +1,8 @@
 package com.adopet.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.adopet.model.entity.PetsToDonate;
+import com.adopet.model.entity.PetToDonate;
 
-public interface PetsToDonateRepository extends JpaRepository<PetsToDonate, Long> {
+public interface PetsToDonateRepository extends JpaRepository<PetToDonate, Long> {
     
 }
