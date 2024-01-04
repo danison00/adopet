@@ -9,7 +9,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -39,7 +41,9 @@ public class Human implements Serializable {
     @Column(length = 50)
     private String email;
 
-    // private Endereco endereco;
+    @OneToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "andress_id_fk")
+    private Andress andress;
 
     @OneToMany(mappedBy = "human", cascade = CascadeType.ALL)
     private List<PetsForAdoption> petsForAdoption;
