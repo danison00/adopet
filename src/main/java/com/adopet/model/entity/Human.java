@@ -32,13 +32,13 @@ public class Human implements Serializable {
     @Column(length = 10)
     private String gender;
 
-    @Column(length = 11)
+    @Column(length = 11, unique = true)
     private String cpf;
 
     @Column(length = 15)
     private String telephone;
 
-    @Column(length = 50)
+    @Column(length = 50, unique = true)
     private String email;
 
     @OneToOne(cascade = CascadeType.ALL)
