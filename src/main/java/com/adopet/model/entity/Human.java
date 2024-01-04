@@ -46,7 +46,7 @@ public class Human implements Serializable {
     private Andress andress;
 
     @OneToMany(mappedBy = "human", cascade = CascadeType.ALL)
-    private List<PetForAdoption> petsForAdoption;
+    private List<PetToAdopt> petsForAdoption;
 
     @OneToMany(mappedBy = "human", cascade = CascadeType.ALL)
     private List<PetToDonate> petsToDonate;

@@ -9,7 +9,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @EqualsAndHashCode(callSuper=true)
 @Entity
-public class PetForAdoption  extends Pet{
+public class PetToAdopt  extends Pet{
     
 
     @ManyToOne
