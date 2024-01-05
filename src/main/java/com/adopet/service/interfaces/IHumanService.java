@@ -11,5 +11,9 @@ public interface IHumanService {
     void deleteByUsername(String username);
 
     Human findByUsername(String username);
+    
+    boolean nonExistsByCpf(String cpf);
+
+    Human findByCpf(String cpf);
 
 }

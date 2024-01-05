@@ -28,13 +28,27 @@ public class HumanService implements IHumanService {
     @Override
     public void deleteByUsername(String username) {
 
-        iHumanRepository.deleteByUsername(username);
+        // iHumanRepository.deleteByUsername(username);
     }
 
     @Override
     public Human findByUsername(String username) {
-       
-       return iHumanRepository.findByUsername(username);
+
+        // return iHumanRepository.findByUsername(username);
+
+        return new Human();
+    }
+
+    @Override
+    public boolean nonExistsByCpf(String cpf) {
+       return !iHumanRepository.existsByCpf(cpf);
+    }
+
+    @Override
+    public Human findByCpf(String cpf) {
+    
+       return iHumanRepository.findByCpf(cpf);
+        
     }
 
 }
