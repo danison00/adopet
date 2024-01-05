@@ -3,10 +3,10 @@ package com.adopet.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import com.adopet.model.entity.Human;
 
-public interface HumanRepository  extends JpaRepository<Human, Long>{
+public interface HumanRepository extends JpaRepository<Human, Long> {
 
-    void deleteByUsername(String username);
+    boolean existsByCpf(String cpf);
 
-    Human findByUsername(String username);
-    
+    Human findByCpf(String cpf);
+
 }
