@@ -41,14 +41,20 @@ public class HumanService implements IHumanService {
 
     @Override
     public boolean nonExistsByCpf(String cpf) {
-       return !iHumanRepository.existsByCpf(cpf);
+        return !iHumanRepository.existsByCpf(cpf);
     }
 
     @Override
-    public Human findByCpf(String cpf) {
-    
-       return iHumanRepository.findByCpf(cpf);
-        
+    public Human findByCpf(String cpf) throws Exception {
+
+        return iHumanRepository.findByCpf(cpf).orElseThrow(() -> new RuntimeException("Usuário não encontrado."));
+
+    }
+
+    @Override
+    public boolean nonExistsByEmail(String cpf) {
+        return !iHumanRepository.existsByEmail(cpf);
+
     }
 
 }

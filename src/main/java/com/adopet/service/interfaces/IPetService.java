@@ -12,7 +12,7 @@ public interface IPetService {
 
     void deleteById(Long id);
 
-    Pet findById(Long id);
+    Pet findById(Long id) throws Exception;
 
     List<Pet> findAll();
 

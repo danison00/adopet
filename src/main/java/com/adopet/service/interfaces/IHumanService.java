@@ -1,5 +1,7 @@
 package com.adopet.service.interfaces;
 
+import java.util.Optional;
+
 import com.adopet.model.entity.Human;
 
 public interface IHumanService {
@@ -11,9 +13,11 @@ public interface IHumanService {
     void deleteByUsername(String username);
 
     Human findByUsername(String username);
-    
+
     boolean nonExistsByCpf(String cpf);
 
-    Human findByCpf(String cpf);
+    boolean nonExistsByEmail(String cpf);
+
+    Human findByCpf(String cpf) throws Exception;
 
 }

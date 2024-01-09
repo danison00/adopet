@@ -31,7 +31,7 @@ public class PetService implements IPetService {
     }
 
     @Override
-    public Pet findById(Long id) {
+    public Pet findById(Long id) throws Exception{
         return iAdoptRepository.findById(id).orElseThrow(() -> new RuntimeException("Pet não encontrado."));
     }
 
