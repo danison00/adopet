@@ -17,8 +17,12 @@ public class InterestService implements IInterestService {
 
     @Override
     public void interestInApet(String humanCpf, Long petId) throws Exception {
+        
         var pet = iPetService.findById(petId);
         var human = ihumanService.findByCpf(humanCpf);
+
+        if(pet.getOwner().getId() == human.getId())
+            throw new RuntimeException("Não é possível demonstrar interesse em seu próprio pet.");
         
         pet.setNumInteresses(pet.getNumInteresses()+1);
         pet.getInterestedHumans().add(human);
