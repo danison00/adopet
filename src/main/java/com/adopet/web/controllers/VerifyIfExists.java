@@ -35,4 +35,13 @@ public class VerifyIfExists {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).build();
 
     }
+   @GetMapping("/username")
+    public ResponseEntity<HttpStatus> username(@PathParam("username") String username) {
+
+
+            return ResponseEntity.ok().build();
+
+
+
+    }
 }

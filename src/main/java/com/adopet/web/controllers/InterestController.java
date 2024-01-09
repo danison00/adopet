@@ -7,10 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.adopet.service.interfaces.IHumanService;
 import com.adopet.service.interfaces.IInterestService;
-import com.adopet.service.interfaces.IPetService;
 
 @RestController
 @RequestMapping("/interest")

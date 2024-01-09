@@ -36,7 +36,7 @@ import io.swagger.v3.oas.annotations.info.License;
       )
 )
 @RestController
-@RequestMapping("human")
+@RequestMapping("/api/human")
 public class HumanController {
 
       @Autowired

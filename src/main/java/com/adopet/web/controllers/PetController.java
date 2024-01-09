@@ -69,21 +69,34 @@ public class PetController {
     }
 
     @GetMapping("/find-by-id")
-    public ResponseEntity<?> findById(@PathParam("id") Long id) throws Exception {
-        
+    public ResponseEntity<Pet> findById(@PathParam("id") Long id) throws Exception {
+
         var pet = this.iPetService.findById(id);
 
         return ResponseEntity.ok().body(pet);
     }
 
     @DeleteMapping("/delete-by-id")
-    public ResponseEntity<?> deleteById(@PathParam("id") Long id) throws Exception {
+    public ResponseEntity<HttpStatus> deleteById(@PathParam("id") Long id) throws Exception {
 
-        findById(id);
+        this.iPetService.findById(id);
         iPetService.deleteById(id);
 
         return ResponseEntity.ok().build();
     }
-    
+
+    @GetMapping("/my-pets/to-donate")
+    public ResponseEntity<List<PetDto>> myPetsToDonate(@PathParam("humanId") Long humanId) throws Exception {
+
+        List<Pet> pets = iPetService.findByHuman(humanId);
+
+        List<PetDto> petDtos = new ArrayList<>();
+
+        for (Pet pet : pets) 
+            petDtos.add(pet.getDto());
+        
+
+        return ResponseEntity.ok().body(petDtos);
+    }
 
 }
