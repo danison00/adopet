@@ -13,11 +13,11 @@ import com.adopet.service.interfaces.IPetService;
 public class PetService implements IPetService {
 
     @Autowired
-    private PetRepository iAdoptRepository;
+    private PetRepository iPetRepository;
 
     @Override
     public Pet save(Pet pet) {
-        return iAdoptRepository.saveAndFlush(pet);
+        return iPetRepository.saveAndFlush(pet);
     }
 
     @Override
@@ -27,23 +27,24 @@ public class PetService implements IPetService {
 
     @Override
     public void deleteById(Long id) {
-        iAdoptRepository.deleteById(id);
+        iPetRepository.deleteById(id);
     }
 
     @Override
     public Pet findById(Long id) throws Exception{
-        return iAdoptRepository.findById(id).orElseThrow(() -> new RuntimeException("Pet não encontrado."));
+        return iPetRepository.findById(id).orElseThrow(() -> new RuntimeException("Pet não encontrado."));
     }
 
     @Override
     public List<Pet> findAll() {
-        return iAdoptRepository.findAll();
+        return iPetRepository.findAll();
     }
 
     @Override
-    public List<Pet> findByHuman(Human human) {
+    public List<Pet> findByHuman(Long humanId) {
 
-        return null;
+        
+        return iPetRepository.findByOwnerId(humanId);
     }
 
 }

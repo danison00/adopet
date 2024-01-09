@@ -16,7 +16,7 @@ public interface IPetService {
 
     List<Pet> findAll();
 
-    List<Pet> findByHuman(Human human);
+    List<Pet> findByHuman(Long humanId);
 
 
 
